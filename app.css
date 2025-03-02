@@ -44,6 +44,10 @@ button {
     margin: 0 10px;
 }
 
+#subscriberCount {
+    color:white;
+}
+
 button:hover {
     color: rgba(70, 70, 70, 0.62);
     background-color: rgba(34, 34, 34, 0.62);
