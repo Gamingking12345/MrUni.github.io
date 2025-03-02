@@ -50,11 +50,13 @@ button:hover {
 
 /* Section styles */
 #homepg, #aboutpg, #mappg {
-    visibility: hidden;
-    opacity: 0;
-    padding-top: 60px;
+    visibility: hidden; /* Hide all sections by default */
+    opacity: 0; /* Set opacity to 0 to make them invisible */
+    padding-top: 60px; /* You can adjust this as needed */
+    height: 0; /* Prevent extra space from hidden sections */
+    overflow: hidden; /* Prevent scrolling */
+    transition: visibility 0s 0.3s, opacity 0.3s ease, height 0s 0.3s;
 }
-
 #homepg {
     visibility: visible;
     opacity: 1;
@@ -77,8 +79,10 @@ button:hover {
 }
 
 #homepg:target, #aboutpg:target, #mappg:target {
-    visibility: visible;
-    opacity: 1;
+    visibility: visible; /* Show the section when targeted */
+    opacity: 1; /* Make it fully opaque */
+    height: auto; /* Allow the section to expand normally */
+    transition: visibility 0s 0s, opacity 0.3s ease;
 }
 
 #homepg:not(:target), #aboutpg:not(:target), #mappg:not(:target) {
