@@ -31,8 +31,29 @@
         <p>The Official Bot For The Creator Carnage Event! This bot is used by the owners of Creator Carnage for testing their event!</p>
         <a href="https://discord.com/oauth2/authorize?client_id=1262903023374696479&permissions=8&integration_type=0&scope=bot"><img src="images/The Universe.png"></a>
         <p>This bot is used for communtity management and is completely free! You can get the bot by clicking the image!</p>
+        <p>YouTube Subscribers:<div id="subscriberCount"></div></p>
     </div>
 
-    <script src="app.js"></script>
+    <script>
+    const APIKey = 'AIzaSyBVgS9OIHl2l__K9cF-KWu892yCBmKCmk8';
+    const Userid = 'UC52_9bQ_cd1SBsE5yjOcxYw';
+    const subscriberCount= document.getElementById('subscriberCount');
+   
+    let getdata = () => {
+        fetch(`https://www.googleapis.com/youtube/v3/channels?part=statistics&id=${Userid}&key=${APIKey}`)
+        .then(response => {
+            return response.json()
+        })
+        .then(data => {
+            console.log(data);
+            subscriberCount.innerHTML = data["items"][0].statistics.subscriberCount;
+            
+        })
+    }
+   getdata();
+
+    src="app.js"
+    
+    </script>
 </body>
 </html>
