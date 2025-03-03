@@ -9,3 +9,7 @@ window.addEventListener("hashchange", function() {
         document.body.classList.remove("no-scroll");
     }
 });
+
+function no(){
+    alert("No");
+}
