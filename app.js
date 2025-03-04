@@ -23,6 +23,9 @@ window.onload = showBrowserPopup;
 function showYourSecrets(){
     alert("No New Content");
 }
+function no(){
+    alert("No");
+}
 
 // Event listener to handle hash changes and apply no-scroll class when necessary
 window.addEventListener("hashchange", function() {
