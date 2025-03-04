@@ -32,7 +32,7 @@
         <img src="images/CarnageBot.png">
         <p>The Official Bot For The Creator Carnage Event! This bot is used by the owners of Creator Carnage for testing their event!</p>
         <a href="https://discord.com/oauth2/authorize?client_id=1262903023374696479&permissions=8&integration_type=0&scope=bot"><img src="images/The Universe.png"></a>
-        <p>This bot is used for communtity management and is completely free! You can get the bot by clicking the image!</p>
+        <p>This bot is used for community management and is completely free! You can get the bot by clicking the image!</p>
         <p>‎</p>
         <p>I have<div id="subscriberCount"></div><p>subscriber(s) on youtube!</p></p>
     </div>
@@ -55,12 +55,37 @@
         .then(data => {
             console.log(data);
             subscriberCount.innerHTML = data["items"][0].statistics.subscriberCount;
-            
         })
     }
    getdata();
 
+    // Browser detection for Opera GX
+    function isOperaGX() {
+        const userAgent = navigator.userAgent;
+        return userAgent.includes('OPR') && userAgent.includes('GX');
+    }
+
+    // Function to show popup if not Opera GX
+    function showBrowserPopup() {
+        if (!isOperaGX()) {
+            alert("This website works best with Opera GX. Please switch to Opera GX for the best experience.");
+        }
+    }
+
+    // Trigger the popup on page load
+    window.onload = showBrowserPopup;
     
+    function showYourSecrets(){
+        alert("No New Content");
+    }
+
+    window.addEventListener("hashchange", function() {
+        if (window.location.hash === "#aboutpg") {
+            document.body.classList.add("no-scroll");
+        } else {
+            document.body.classList.remove("no-scroll");
+        }
+    });
     </script>
     <script src="app.js"></script>
 </body>
