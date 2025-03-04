@@ -1,3 +1,4 @@
+/* General Styles */
 body {
     background-color: rgb(0, 0, 43);
     font-family: Arial, sans-serif;
@@ -5,8 +6,8 @@ body {
 
 h1 {
     color: red;
-    font-size: 3rem; /* Adjust the font size as needed */
-    margin: 0; /* Remove any unwanted margins */
+    font-size: 3rem;
+    margin: 0;
     position: relative;
 }
 
@@ -15,11 +16,11 @@ p {
 }
 
 #subscriberCount {
-    color: white
+    color: white;
 }
 
 nav {
-    position: fixed; 
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -50,10 +51,10 @@ button:hover {
 
 /* Section styles */
 #homepg, #aboutpg, #mappg {
-    visibility: hidden; /* Hide all sections by default */
-    opacity: 0; /* Make them invisible */
-    height: 0; /* Prevent them from taking up space */
-    overflow: hidden; /* Prevent overflow */
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
     transition: visibility 0s 0.3s, opacity 0.3s ease, height 0s 0.3s;
 }
 #homepg {
@@ -63,31 +64,27 @@ button:hover {
 }
 
 #aboutpg {
-    width: 100%; /* Ensure it takes up the full width of the container */
-    margin: 0 auto; /* Centers the section horizontally */
-    padding: 0px; /* Add some padding for spacing */
-    text-align: left; /* Ensures text is aligned left */
-    box-sizing: border-box; /* Ensures padding doesn’t increase the width */
-    overflow: hidden; /* Prevents any overflowing content */
+    width: 100%;
+    margin: 0 auto;
+    padding: 0px;
+    text-align: left;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
 #mappg {
-    display: block; /* Use block layout */
-    padding-top: 0; /* Ensure no extra padding from the top */
-    text-align: center; /* Centers the text horizontally */
+    display: block;
+    padding-top: 0;
+    text-align: center;
 }
 
 #homepg:target, #aboutpg:target, #mappg:target {
     visibility: visible;
     opacity: 1;
-    height: auto; /* Let the section expand */
+    height: auto;
     transition: visibility 0s 0s, opacity 0.3s ease, height 0s 0s;
 }
 
-#homepg:not(:target), #aboutpg:not(:target), #mappg:not(:target) {
-/* Nothing */
-}
-
 body.no-scroll {
-    overflow: hidden; /* Prevent scrolling */
+    overflow: hidden;
 }
