@@ -23,6 +23,7 @@ window.onload = showBrowserPopup;
 function showYourSecrets(){
     alert("No New Content");
 }
+
 function no(){
     alert("No");
 }
@@ -35,3 +36,29 @@ window.addEventListener("hashchange", function() {
         document.body.classList.remove("no-scroll");
     }
 });
+
+function checkPassword() {
+    const enteredPassword = document.getElementById("password").value;
+    const correctPassword = "FCJ206"; // Change this to your desired password
+    const errorMessage = document.getElementById("error-message");
+
+    if (enteredPassword === correctPassword) {
+        // Store authentication in local storage to persist access
+        localStorage.setItem("authenticated", "true");
+
+        // Hide login form and show content
+        document.getElementById("login").style.display = "none";
+        document.getElementById("content").style.display = "block";
+    } else {
+        errorMessage.innerText = "Incorrect password. Try again.";
+    }
+}
+
+// Check if user is already authenticated (so they don't have to re-enter the password)
+document.addEventListener("DOMContentLoaded", function () {
+    if (localStorage.getItem("authenticated") === "true") {
+        document.getElementById("login").style.display = "none";
+        document.getElementById("content").style.display = "block";
+    }
+});
+
