@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protected Page</title>
+    <style>
+        body {
+            background-color: rgb(0, 0, 43);
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        #content {
+            display: none;
+        }
+        #protected {
+            color:rgb(14, 14, 139)
+        }
+        #pcontent {
+            color:rgb(255, 255, 255)
+        }
+        #password6 {
+            color:rgb(255, 255, 255)
+        }
+    </style>
+</head>
+<body>
+
+    <div id="login">
+        <h2 id="password6">Enter Password</h2>
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="checkPassword()">Submit</button>
+        <p id="error-message" style="color: red;"></p>
+    </div>
+
+    <div id="content">
+        <h1 id="protected">Welcome to the Protected Page</h1>
+        <p id="pcontent">This content is hidden behind a password.</p>
+    </div>
+
+    <script src="app.js"></script>
+
+</body>
+</html>
